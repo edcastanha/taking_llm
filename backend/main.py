@@ -1,3 +1,9 @@
+"""
+Módulo principal da aplicação FastAPI.
+
+Responsável por inicializar a aplicação, configurar middlewares, incluir rotas e expor endpoints básicos.
+"""
+
 from fastapi import FastAPI
 from app.config.settings import Settings
 from app.routers.search import router as search_router
@@ -13,10 +19,16 @@ logging.basicConfig(
 
 
 def get_settings():
+    """
+    Instancia e retorna as configurações da aplicação.
+    """
     return Settings()
 
 
 def create_application():
+    """
+    Cria e configura a aplicação FastAPI, incluindo middlewares e rotas.
+    """
     # Initialize settings
     settings = get_settings()
 
@@ -44,10 +56,16 @@ def create_application():
 
     @app.get("/")
     async def root():
+        """
+        Endpoint raiz. Retorna mensagem de boas-vindas.
+        """
         return {"message": "Welcome to RAG API"}
 
     @app.get("/health")
     async def health_check():
+        """
+        Endpoint de verificação de saúde da API.
+        """
         logging.info("Health endpoint was called")
         return {"status": "Ok"}
 
