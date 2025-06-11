@@ -1,0 +1,17 @@
+openai
+fastapi
+uvicorn
+docling
+tiktoken
+pydantic
+pydantic-settings
+python-multipart
+ipykernel
+faiss-cpu
+python-dotenv
+langsmith
+sentence-transformers
+qdrant-client[fastembed]
+
+guardrails-ai
+yfinance
