@@ -1,4 +1,4 @@
-# Taking Backend
+# RAG Backend
 
 Backend para plataforma de busca híbrida com RAG (Retrieval-Augmented Generation), utilizando Python, FastAPI e Qdrant.
 
@@ -37,8 +37,8 @@ Este backend implementa uma API para busca híbrida, combinando busca semântica
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/taking.git
-cd taking/backend
+git clone https://github.com/edcastanha/taskRAG.git
+cd taskRAG/backend
 ```
 
 Crie e ative um ambiente virtual:
