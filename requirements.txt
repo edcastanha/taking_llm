@@ -13,8 +13,6 @@ anyio==4.9.0
     #   httpx
     #   openai
     #   starlette
-appnope==0.1.4
-    # via ipykernel
 arrow==1.3.0
     # via isoduration
 asttokens==3.0.0
@@ -43,16 +41,12 @@ charset-normalizer==3.4.2
 click==8.1.8
     # via
     #   docling
+    #   guardrails-ai
     #   litellm
-    #   nltk
     #   typer
     #   uvicorn
-colorama==0.4.6
-    # via griffe
 coloredlogs==15.0.1
-    # via
-    #   guardrails-ai
-    #   onnxruntime
+    # via onnxruntime
 comm==0.2.2
     # via ipykernel
 curl-cffi==0.11.3
@@ -123,15 +117,13 @@ googleapis-common-protos==1.70.0
     # via
     #   opentelemetry-exporter-otlp-proto-grpc
     #   opentelemetry-exporter-otlp-proto-http
-griffe==0.36.9
-    # via guardrails-ai
 grpcio==1.71.0
     # via
     #   opentelemetry-exporter-otlp-proto-grpc
     #   qdrant-client
-guardrails-ai==0.5.15
+guardrails-ai==0.8.0
     # via -r requirements.in
-guardrails-api-client==0.3.13
+guardrails-api-client==0.4.0
     # via guardrails-ai
 guardrails-hub-types==0.0.4
     # via guardrails-ai
@@ -195,9 +187,7 @@ jinja2==3.1.6
 jiter==0.10.0
     # via openai
 joblib==1.5.1
-    # via
-    #   nltk
-    #   scikit-learn
+    # via scikit-learn
 jsonlines==3.1.0
     # via docling-ibm-models
 jsonpatch==1.33
@@ -223,14 +213,16 @@ jupyter-core==5.8.1
     # via
     #   ipykernel
     #   jupyter-client
-langchain-core==0.3.63
+langchain-core==1.2.11
     # via guardrails-ai
-langsmith==0.3.43
+langsmith==0.7.1
     # via
     #   -r requirements.in
     #   langchain-core
 latex2mathml==3.78.0
     # via docling-core
+lazy-imports==1.2.0
+    # via guardrails-api-client
 lazy-loader==0.4
     # via scikit-image
 litellm==1.72.0
@@ -277,8 +269,6 @@ networkx==3.5
     #   torch
 ninja==1.11.1.4
     # via easyocr
-nltk==3.8.1
-    # via guardrails-ai
 numpy==2.2.6
     # via
     #   docling-ibm-models
@@ -299,6 +289,43 @@ numpy==2.2.6
     #   torchvision
     #   transformers
     #   yfinance
+nvidia-cublas-cu12==12.6.4.1
+    # via
+    #   nvidia-cudnn-cu12
+    #   nvidia-cusolver-cu12
+    #   torch
+nvidia-cuda-cupti-cu12==12.6.80
+    # via torch
+nvidia-cuda-nvrtc-cu12==12.6.77
+    # via torch
+nvidia-cuda-runtime-cu12==12.6.77
+    # via torch
+nvidia-cudnn-cu12==9.5.1.17
+    # via torch
+nvidia-cufft-cu12==11.3.0.4
+    # via torch
+nvidia-cufile-cu12==1.11.1.6
+    # via torch
+nvidia-curand-cu12==10.3.7.77
+    # via torch
+nvidia-cusolver-cu12==11.7.1.2
+    # via torch
+nvidia-cusparse-cu12==12.5.4.2
+    # via
+    #   nvidia-cusolver-cu12
+    #   torch
+nvidia-cusparselt-cu12==0.6.3
+    # via torch
+nvidia-nccl-cu12==2.26.2
+    # via torch
+nvidia-nvjitlink-cu12==12.6.85
+    # via
+    #   nvidia-cufft-cu12
+    #   nvidia-cusolver-cu12
+    #   nvidia-cusparse-cu12
+    #   torch
+nvidia-nvtx-cu12==12.6.77
+    # via torch
 onnxruntime==1.22.0
     # via fastembed
 openai==1.82.0
@@ -490,8 +517,6 @@ referencing==0.36.2
     #   jsonschema-specifications
 regex==2023.12.25
     # via
-    #   guardrails-ai
-    #   nltk
     #   tiktoken
     #   transformers
 requests==2.32.3
@@ -510,7 +535,7 @@ requests-toolbelt==1.0.0
     # via langsmith
 rfc3339-validator==0.1.4
     # via jsonschema
-rfc3987==1.3.8
+rfc3986-validator==0.1.1
     # via jsonschema
 rich==13.9.4
     # via
@@ -547,8 +572,8 @@ sentence-transformers==4.1.0
     # via -r requirements.in
 setuptools==80.9.0
     # via
-    #   guardrails-api-client
     #   torch
+    #   triton
 shapely==2.1.1
     # via easyocr
 shellingham==1.5.4
@@ -615,7 +640,6 @@ tqdm==4.67.1
     #   fastembed
     #   huggingface-hub
     #   mpire
-    #   nltk
     #   openai
     #   semchunk
     #   sentence-transformers
@@ -633,6 +657,8 @@ transformers==4.52.3
     #   docling-core
     #   docling-ibm-models
     #   sentence-transformers
+triton==3.3.0
+    # via torch
 typer==0.12.5
     # via
     #   docling
@@ -642,7 +668,6 @@ types-python-dateutil==2.9.0.20250516
     # via arrow
 typing-extensions==4.13.2
     # via
-    #   anyio
     #   beautifulsoup4
     #   docling-core
     #   fastapi
@@ -657,7 +682,6 @@ typing-extensions==4.13.2
     #   pydash
     #   python-docx
     #   python-pptx
-    #   referencing
     #   sentence-transformers
     #   torch
     #   typer
@@ -670,11 +694,15 @@ tzdata==2025.2
     # via pandas
 uri-template==1.3.0
     # via jsonschema
-urllib3==2.0.7
+urllib3==2.6.3
     # via
     #   guardrails-api-client
     #   qdrant-client
     #   requests
+uuid-utils==0.14.0
+    # via
+    #   langchain-core
+    #   langsmith
 uvicorn==0.34.2
     # via -r requirements.in
 wcwidth==0.2.13
@@ -687,6 +715,8 @@ wrapt==1.17.2
     # via deprecated
 xlsxwriter==3.2.3
     # via python-pptx
+xxhash==3.6.0
+    # via langsmith
 yarl==1.20.0
     # via aiohttp
 yfinance==0.2.62
